@@ -1,1 +1,1 @@
-# raghudevopsb77/tf-module-rabbitmq
+# raghudevopsb76/tf-module-rabbitmq
