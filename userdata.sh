@@ -1,4 +1,10 @@
 #!/bin/bash
 
-ansible-pull -i localhost, -U https://github.com/raghudevopsb76/roboshop-ansible roboshop.yml -e role_name=rabbitmq -e env=${env} | tee -a /opt/userdata.log
+curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash
+curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | bash
+dnf install rabbitmq-server -y
+systemctl enable rabbitmq-server
+systemctl start rabbitmq-server
+rabbitmqctl add_user roboshop roboshop123
+rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"
 
