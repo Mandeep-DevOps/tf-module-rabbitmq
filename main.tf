@@ -85,7 +85,7 @@ resource "aws_iam_role" "main" {
             "ssm:GetParameter"
           ],
           "Resource" : [
-            "arn:aws:ssm:us-east-1:633788536644:parameter/${var.env}.${local.project_name}.rabbitmq.*"
+            "arn:aws:ssm:us-east-1:633788536644:parameter/${var.env}.${var.project_name}.rabbitmq.*"
           ]
         },
         {
